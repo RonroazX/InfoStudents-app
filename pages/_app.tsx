@@ -4,6 +4,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 import { UserContext } from "../lib/context";
 import { useUserType, useUserData } from "../lib/hook";
 import ErrorBoundary from "../components/ErrorBoundary";
+import { Toaster } from "react-hot-toast";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const userData = useUserData();
@@ -19,6 +20,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           studentType: userType,
         }}
       >
+        <Toaster />
         <ChakraProvider>
           <Component {...pageProps} />
         </ChakraProvider>

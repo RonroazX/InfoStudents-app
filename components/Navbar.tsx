@@ -90,11 +90,13 @@ function NavBarFeatures({
   ) : (
     <HStack spacing="4">
       <Tooltip label="Añadir Oferta" fontSize="md">
-        <IconButton
-          variant="ghost"
-          aria-label="User Settings button"
-          icon={<AddIcon />}
-        />
+        <Link href={"/addpost"}>
+          <IconButton
+            variant="ghost"
+            aria-label="User Settings button"
+            icon={<AddIcon />}
+          />
+        </Link>
       </Tooltip>
       <Tooltip label="Configuración" fontSize="md">
         <IconButton

@@ -25,8 +25,9 @@ import { useContext, useState } from "react";
 import { UserContext } from "../lib/context";
 import { doc, getDoc, getFirestore, writeBatch } from "firebase/firestore";
 import { User } from "@firebase/auth";
-import { useRouter } from "next/router";
 import queryResolver from "../lib/queryResolver";
+import { useRouter } from "next/router";
+import Redirecter from "../components/Redirecter";
 
 export default function Enter() {
   const { isRegistered, user } = useContext(UserContext);
@@ -38,7 +39,7 @@ export default function Enter() {
     <>
       {user ? (
         isRegistered ? (
-          <Home />
+          <Redirecter />
         ) : (
           <Register student={userStudentType} />
         )
